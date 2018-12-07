@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestAll">
+
+    <test name="order">
+        <packages>
+            <package name="algorithm.src.testNG.*" />
+        </packages>
+    </test>
+    
+ <!-- @BeforeSuite -->
+<suite name="TestAll">
+
+    <!-- @BeforeTest -->
+    <test name="case1">
+    
+    <!-- Only run TestNGgroup -->
+     <groups>
+            <run>
+                <include name="selenium-test" />
+                <include name="db" />
+            </run>
+     </groups>
+        
+      <classes>
+        <class name="algorithm.src.testNG.testNG_TC2" />
+      <!-- Include / exclude method -->
+        <class name="algorithm.src.testNG.testNGLearning" />
+            <methods>
+                <include name="testMakeOrder" />
+                <include name="testUpdateOrder" />
+                <!--
+                    <exclude name="testMakeOrder" />
+                 -->
+            </methods>
+      </classes>
+    </test>
+    <!-- @AfterTest -->
+
+</suite>
+<!-- @AfterSuite -->
+
+</suite>
