@@ -18,9 +18,22 @@ public class MentoringAdminController {
 			program.validate();
 		}
 
+		/*
+		 * Define dwr call method,parameter
+		 */
 		SaveDraftProgramAction action = new SaveDraftProgramAction(program);
 		
+		/*
+		 * Include login();
+		 * Use: loginUrl,header,body to login
+		 * Get: get/Set cookie,token.
+		 */
 		DWRBaseService service = DWRBaseService.getInstance("user_cgrant");
+		
+		/*
+		 * generateUrl, SetHeader, generateBody
+		 * SendRequest, (return response to action)
+		 */
 		service.performAction(action);
 		
 		SaveDraftProgramResponse response = action.getResponse();
